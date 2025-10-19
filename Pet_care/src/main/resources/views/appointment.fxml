@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(to bottom right,#ffe259,#ffa751);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AppointmentController">
+
+    <!-- LEFT BACK BUTTON -->
+    <left>
+        <VBox alignment="TOP_LEFT" style="-fx-padding: 20;">
+            <Button onAction="#goBack" style="-fx-background-color:#3498db; -fx-text-fill:white;-fx-font-size:14px; -fx-font-weight:bold; -fx-background-radius:15; -fx-padding:8 15;" text="← Back" />
+        </VBox>
+    </left>
+
+    <!-- TOP SECTION: Title -->
+    <top>
+        <HBox alignment="CENTER">
+            <Label style="-fx-font-size:30px;-fx-font-weight:bold;-fx-text-fill:#2c3e50;-fx-padding:30 0 20 0;" text="🐾 Book a Vet Appointment 🐾" />
+        </HBox>
+    </top>
+
+    <!-- CENTER SECTION: Form -->
+    <center>
+        <GridPane alignment="CENTER" hgap="20" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" prefWidth="150" />
+                <ColumnConstraints prefWidth="250" />
+            </columnConstraints>
+
+            <Label text="Pet Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="petNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Select Vet:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="vetChoiceBox" prefWidth="250.0" promptText="Choose Vet" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Time Slot:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <ComboBox fx:id="timeSlotChoiceBox" prefWidth="250.0" promptText="Select Time Slot" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <ChoiceBox fx:id="typeChoice" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Button onAction="#handleAppointment" style="-fx-background-color:#27ae60;-fx-text-fill:white;-fx-font-size:16px;-fx-font-weight:bold;-fx-background-radius:25;-fx-padding:10 30;" text="Book Appointment" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+         <BorderPane.margin>
+            <Insets left="-150.0" />
+         </BorderPane.margin>
+        </GridPane>
+    </center>
+
+    <!-- BOTTOM SECTION: Table -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="8" style="-fx-padding:10 30 30 30;">
+            <Label style="-fx-font-size:20px;-fx-font-weight:bold;" text="📅 Your Appointments" />
+            <TableView fx:id="appointmentTable" prefHeight="300" prefWidth="1000">
+                <columns>
+                    <TableColumn fx:id="colPetName" prefWidth="250" text="Pet Name" />
+                    <TableColumn fx:id="colDate" prefWidth="250" text="Date" />
+                    <TableColumn fx:id="colTime" prefWidth="250" text="Time" />
+                    <TableColumn fx:id="colType" prefWidth="250" text="Type" />
+                </columns>
+            </TableView>
+        </VBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CartController">
+    <left>
+        <VBox alignment="TOP_LEFT" style="-fx-padding: 20;">
+            <Button onAction="#goBackToShop" style="-fx-background-color:#3498db;..." text="← Back to Shop" />
+        </VBox>
+    </left>
+    <top>
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 20;" text="🛒 Your Shopping Cart 🛒" />
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="10" style="-fx-padding: 10;">
+            <TableView fx:id="cartTable" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="colItemName" prefWidth="250" text="Item Name" />
+                    <TableColumn fx:id="colQuantity" prefWidth="100" text="Quantity" />
+                    <TableColumn fx:id="colPrice" prefWidth="150" text="Price (৳)" />
+                    <TableColumn fx:id="colSubtotal" prefWidth="150" text="Subtotal (৳)" />
+                    <TableColumn fx:id="colAction" prefWidth="100" text="Action" />
+                </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" style="-fx-padding: 10;">
+                <Label fx:id="totalPriceLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 20;">
+            <Button onAction="#goToCheckout" style="-fx-font-size: 16px; -fx-background-color:#27ae60; -fx-text-fill:white;" text="Proceed to Checkout" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,14 @@
+/* Style for login button */
+.button {
+    -fx-background-color: #0984e3;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Hover effect for login button */
+.button:hover {
+    -fx-background-color: #74b9ff;
+    -fx-text-fill: #2d3436;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(to bottom right,#ff9a9e,#fad0c4);" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignupController">
+
+    <!-- TOP SECTION: Title -->
+    <top>
+        <HBox alignment="CENTER">
+            <!-- Removed prefHeight/Width from HBox -->
+            <Label style="-fx-font-size:34px;-fx-font-weight:bold;-fx-text-fill:#2c3e50;-fx-padding:40 0 20 0;" text="🐾 Create Your Account 🐾" />
+        </HBox>
+    </top>
+
+    <!-- CENTER SECTION: Form -->
+    <center>
+        <VBox alignment="CENTER" spacing="25">
+            <!-- Removed prefHeight/Width from VBox -->
+
+            <TextField fx:id="nameField" minHeight="10.0" minWidth="10.0" prefWidth="10.0" promptText="Enter Name" style="-fx-background-radius:10;-fx-padding:10;" />
+
+            <TextField fx:id="emailField" prefWidth="320" promptText="Enter Email" style="-fx-background-radius:10;-fx-padding:10;" />
+
+            <PasswordField fx:id="passwordField" prefWidth="320" promptText="Enter Password" style="-fx-background-radius:10;-fx-padding:10;" />
+
+            <HBox alignment="CENTER" spacing="40">
+                <!-- Buttons, sizing is fine here -->
+                <Button onAction="#handleSignup" style="-fx-background-color:#27ae60;-fx-text-fill:white;-fx-font-size:16px;-fx-font-weight:bold;-fx-background-radius:25;-fx-padding:10 30;" text="Sign Up" />
+                <Button onAction="#goToLogin" style="-fx-background-color:#3498db;-fx-text-fill:white;-fx-font-size:16px;-fx-font-weight:bold;-fx-background-radius:25;-fx-padding:10 30;" text="Back to Login" />
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM SECTION: Footer -->
+    <bottom>
+        <HBox alignment="CENTER">
+            <!-- Removed prefHeight/Width from HBox -->
+            <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+            <Label style="-fx-font-size:14px;-fx-font-weight:bold;-fx-text-fill:#2c3e50;" text="🐶 Adopt • 💉 Heal • 🛒 Care" />
+        </HBox>
+    </bottom>
+</BorderPane>

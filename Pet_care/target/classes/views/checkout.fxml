@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.CheckoutController"
+            style="-fx-background-color: #f0f2f5;">
+
+    <!-- LEFT BACK BUTTON -->
+    <left>
+        <VBox alignment="TOP_LEFT" style="-fx-padding: 20;">
+            <Button text="← Back to Dashboard" onAction="#goBackToDashboard"
+                    style="-fx-background-color:#3498db; -fx-text-fill:white;
+                           -fx-font-size:14px; -fx-font-weight:bold;
+                           -fx-background-radius:15; -fx-padding:8 15;"/>
+        </VBox>
+    </left>
+
+    <!-- TOP TITLE -->
+    <top>
+        <HBox alignment="CENTER" padding="0 0 10 0">
+            <Label text="💳 Checkout and Payment 💳"
+                   style="-fx-font-size:28px; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER FORM -->
+    <center>
+        <VBox alignment="CENTER" spacing="22" style="-fx-max-width: 600;">
+            <!-- Email only -->
+            <Label text="Email" style="-fx-font-weight:bold;"/>
+            <TextField fx:id="emailField" promptText="Enter your email"
+                       style="-fx-background-radius:8; -fx-padding:8;"/>
+
+            <!-- Payment Method -->
+            <Label text="Payment Method" style="-fx-font-weight:bold;"/>
+            <VBox alignment="CENTER_LEFT" spacing="6" padding="0 0 0 150">
+                <!-- Declare ToggleGroup here (non-Node) -->
+                <fx:define>
+                    <ToggleGroup fx:id="paymentToggleGroup"/>
+                </fx:define>
+                <RadioButton text="Cash on Delivery" userData="Cash on Delivery" toggleGroup="$paymentToggleGroup"/>
+                <RadioButton text="Online Payment"   userData="Online Payment"   toggleGroup="$paymentToggleGroup"/>
+            </VBox>
+
+            <!-- Total -->
+            <Label fx:id="totalPriceLabel" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+            <!-- Place Order -->
+            <Button text="Place Order" onAction="#handlePlaceOrder"
+                    style="-fx-font-size:18px; -fx-background-color:#27ae60;
+                           -fx-text-fill:white; -fx-background-radius:20; -fx-padding:10 25;"/>
+        </VBox>
+    </center>
+</BorderPane>
